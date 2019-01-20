@@ -4,3 +4,14 @@
 2. открываем /importcsv, выбираем locations.csv, для заполнения БД
 3. по адресу /nearest принимаем координаты
 4. app/Http/Controllers/CSVController, app/Http/Controllers/NearestBuildingController, app/Location, 
+
+------------------------------------------------------------------------------------------------------------------------------
+Код для теста запросов:
+
+header('Content-Type: application/json');
+echo json_encode([
+    'method' => $_SERVER['REQUEST_METHOD'],
+    'uri' => $_SERVER['REQUEST_URI'],
+    'body' => file_get_contents('php://input'),
+    'headers' => getallheaders(),
+], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
