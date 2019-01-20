@@ -6,8 +6,10 @@
 4. app/Http/Controllers/CSVController, app/Http/Controllers/NearestBuildingController, app/Location, 
 
 ------------------------------------------------------------------------------------------------------------------------------
-Код для теста запросов:
+Проверка запросов:
 
+```
+<?php
 header('Content-Type: application/json');
 echo json_encode([
     'method' => $_SERVER['REQUEST_METHOD'],
